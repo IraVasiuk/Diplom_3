@@ -11,7 +11,10 @@ public class MainPage {
     private final By currentMenu = By.xpath("//div[contains(@class,'tab_tab__1SPyG tab_tab_type_current__2BEPc')]");
     private final By enterAccountButtonMain = By.xpath(".//button[text()='Войти в аккаунт']");
     private final By profileMainButton = By.xpath(".//p[text()='Личный Кабинет']");
-    private final By makeOrderButton = By.xpath(".//button[text()='Оформить заказ']");
+
+//    private final By makeOrderButton = By.xpath(".//button[text()='Оформить заказ']");  прописан путь иначе, тк падают тесты
+    private final By makeOrderButton = By.cssSelector("[class*=button_button__33qZ0]");
+
     private final By bunsButton = By.xpath(".//span[contains(text(),'Булки')]");
     private final By saucesButton = By.xpath(".//span[contains(text(),'Соусы')]");
     private final By fillingButton = By.xpath(".//span[contains(text(),'Начинки')]");

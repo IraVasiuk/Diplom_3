@@ -2,10 +2,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pageobject.MainPage;
-
-import java.util.concurrent.TimeUnit;
 
 public class ConstructorTest {
     private MainPage mainPage;

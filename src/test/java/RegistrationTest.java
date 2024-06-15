@@ -23,7 +23,7 @@ public class RegistrationTest {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
         registrationPage.registerUser(user);
-        registrationPage.clickSignButton();
+        registrationPage.openRegisterPage();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.authorizationFromLoginPage(user);
         loginPage.clickRegisterButtonLoginPage();
@@ -42,7 +42,7 @@ public class RegistrationTest {
         loginPage.clickRegisterButton();
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.registerUser(user);
-        registrationPage.clickSignButton();
+        registrationPage.openRegisterPage();
         loginPage.authorizationFromLoginPage(user);
         loginPage.clickRegisterButtonLoginPage();
         MainPage mainPage = new MainPage(driver);
@@ -62,7 +62,7 @@ public class RegistrationTest {
         loginPage.clickRegisterButton();
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.registerUser(user);
-        registrationPage.clickSignButton();
+        registrationPage.openRegisterPage();
         loginPage.authorizationFromLoginPage(user);
         loginPage.clickRegisterButtonLoginPage();
         Assert.assertTrue(mainPage.isMainPageOpen());

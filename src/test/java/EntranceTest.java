@@ -1,4 +1,3 @@
-import data.User;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
@@ -9,7 +8,6 @@ import pageobject.LoginPage;
 import pageobject.MainPage;
 import pageobject.PasswordPage;
 import pageobject.RegistrationPage;
-import static constants.Data.*;
 
 public class EntranceTest extends Autostart {
 

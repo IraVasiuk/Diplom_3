@@ -2,12 +2,9 @@ import data.*;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.WebDriver;
 import static constants.Data.*;
 
 public class Autostart {
-
-    public WebDriver driver;
     public UserSteps userSteps;
     public String accessToken;
     public User user;

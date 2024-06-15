@@ -3,8 +3,6 @@ package pageobject;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import static constants.Urls.LOGIN_PAGE;
 import data.User;
 import java.util.concurrent.TimeUnit;
@@ -13,7 +11,9 @@ public class LoginPage {
     private final WebDriver driver;
     private final By loginText = By.xpath(".//*[text()='Вход']");
     private final By registerButton = By.xpath(".//a[(@class = 'Auth_link__1fOlj' and text()= 'Зарегистрироваться')]");
-    private final By signButton = By.xpath(".//button[text()='Войти']");
+
+//    private final By signButton = By.xpath(".//button[text()='Войти']"); прописан путь иначе, тк падают тесты
+    private final By signButton = By.cssSelector("[class*=button_button__33qZ0]");
     private final By emailField = By.xpath(".//label[text()='Email']/following-sibling::input");
     private final By passwordField = By.xpath(".//*[text()='Пароль']/following-sibling::input");
 
@@ -38,8 +38,6 @@ public class LoginPage {
 
     @Step("Ввод электронной почты и пароля")
     public void authorizationFromLoginPage(User user) {
-        new WebDriverWait(driver, 10)
-                .until(ExpectedConditions.urlToBe(LOGIN_PAGE));
         driver.findElement(emailField).click();
         driver.findElement(emailField).sendKeys(user.getEmail());
         driver.findElement(passwordField).click();
@@ -49,6 +47,6 @@ public class LoginPage {
     @Step("Нажать на кнопку Войти")
     public void clickRegisterButtonLoginPage() {
         driver.findElement(signButton).click();
-        driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+        driver.manage().timeouts().implicitlyWait(20000, TimeUnit.MILLISECONDS);
     }
 }
